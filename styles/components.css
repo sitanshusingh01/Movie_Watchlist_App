@@ -1,0 +1,265 @@
+/* Movie Grid Styles */
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 25px;
+  padding: 30px 0;
+}
+
+/* Movie Card Styles */
+.movie-card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.movie-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.movie-card img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+}
+
+.movie-info {
+  padding: 15px;
+}
+
+.movie-info h3 {
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.movie-info p {
+  color: #777;
+  margin-bottom: 15px;
+}
+
+.movie-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Button Styles */
+.btn {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s;
+}
+
+.btn-add {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.btn-add:hover {
+  background-color: #45a049;
+}
+
+.btn-remove {
+  background-color: #f44336;
+  color: white;
+}
+
+.btn-remove:hover {
+  background-color: #d32f2f;
+}
+
+.btn-watched {
+  background-color: #2196F3;
+  color: white;
+}
+
+.btn-watched:hover {
+  background-color: #0b7dda;
+}
+
+.btn-unwatched {
+  background-color: #ff9800;
+  color: white;
+}
+
+.btn-unwatched:hover {
+  background-color: #e68a00;
+}
+
+.btn-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #f44336;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+/* Watchlist Styles */
+.watchlist-empty, .no-movies {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.watchlist-empty h2, .no-movies h2 {
+  margin-bottom: 15px;
+  color: #555;
+}
+
+.watchlist-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 0;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.watchlist-header h2 {
+  color: #333;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.filter-buttons .btn.active {
+  background-color: #667eea;
+  color: white;
+}
+
+/* Movie Details Styles */
+.movie-details-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.movie-details {
+  background: white;
+  border-radius: 10px;
+  max-width: 800px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.movie-details-content {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+}
+
+.movie-details-content img {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.movie-details-info h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.release-date {
+  color: #777;
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+}
+
+.overview {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 25px;
+}
+
+.movie-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.movie-stats p {
+  background: #f9f9f9;
+  padding: 12px;
+  border-radius: 6px;
+}
+
+.movie-stats strong {
+  color: #333;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .movie-details-content {
+    flex-direction: row;
+  }
+  
+  .movie-details-content img {
+    margin-right: 30px;
+    margin-bottom: 0;
+    max-width: 250px;
+  }
+  
+  .header h1 {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .watchlist-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .filter-buttons {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .filter-buttons .btn {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .movie-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+  }
+  
+  .movie-info h3 {
+    font-size: 1rem;
+  }
+  
+  .btn {
+    font-size: 0.8rem;
+    padding: 6px 10px;
+  }
+}
