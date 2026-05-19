@@ -1,6 +1,6 @@
 # Movie Watchlist App
-
-
+A JavaScript-based web application integrated with the TMDB API that allows users to search movies, view details, and manage a personal watchlist.  
+Users can add or remove movies, mark them as watched, and save their preferences locally for easy access.  
 
 ## Features
 
